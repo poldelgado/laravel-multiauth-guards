@@ -1,5 +1,11 @@
 <?php
 
-Route::get('/dashboard', function() {
-    return view('/admin/dashboard');
-    })->name('admin_dashboard');
+use \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+
+Route::get('/dashboard', 'DashboardController@index')->name('admin_dashboard');
+
+
+Route::catch(function () {
+    throw new NotFoundHttpException("Pag no encontrada");
+});
