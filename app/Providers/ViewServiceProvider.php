@@ -26,7 +26,6 @@ class ViewServiceProvider extends ServiceProvider
     {
         Blade::if('admin', function () {
             return auth()->check() && auth()->user()->isAdmin(); //chequeo si esta conectado y si es administrador
-
             //return optional(auth()->user())->isAdmin();
         });
     }
