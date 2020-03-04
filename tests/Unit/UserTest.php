@@ -2,24 +2,26 @@
 
 namespace Tests\Unit;
 
+use App\User;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-   /** @test */
-   function a_user_can_be_an_admin()
-   {
-       use RefreshDatabase;
+    use RefreshDatabase;
 
-       $user = factory(User::class)->create(['admin' => true]);
+    /** @test */
+    function a_user_can_be_an_admin()
+    {
+        $user = factory(User::class)->create(['admin' => false]);
 
-       $this->assertFalse($user->admin);
+        $user = $user->fresh();
 
-       $user->admin = true;
+        $this->assertFalse($user->isAdmin());
 
-       $user->save();
+        $user->admin = true;
+        $user->save();
 
-       $this->assertTrue($user->admin);
-   }
+        $this->assertTrue($user->isAdmin());
+    }
 }
