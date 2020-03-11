@@ -5,6 +5,7 @@ namespace Tests\Feature\Admin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Admin;
 
 class HideAdminRoutesTest extends TestCase
 {
@@ -18,6 +19,9 @@ class HideAdminRoutesTest extends TestCase
                     ->assertRedirect('login');
     }
 
+    /**
+     * @test
+     */
     function it_does_not_allow_guest_to_discover_admin_urls_using_posts()
     {
         $response = $this->post('admin/invalid_url')
@@ -25,12 +29,18 @@ class HideAdminRoutesTest extends TestCase
                     ->assertRedirect('login');
     }
 
+    /**
+     * @test
+     */
     function it_displays_404s_when_admins_visit_invalid_urls()
     {
-        $admin = factory(User::class)->create(['admin' => true]);
-
-        $response = $this->actingAs($admin)
+        $response = $this->actingAs($this->createAdmin(), 'admin')
                     ->get('admin/invalid_url')
                     ->assertStatus(404);
+    }
+
+    protected function createAdmin()
+    {
+       return factory(Admin::class)->create();
     }
 }

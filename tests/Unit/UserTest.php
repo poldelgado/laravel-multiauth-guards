@@ -8,12 +8,12 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase;
+    /*use RefreshDatabase;
 
     /** @test */
-    function a_user_can_be_an_admin()
+    /*function a_user_can_be_an_admin()
     {
-        $user = factory(User::class)->create(['admin' => false]);
+        $user = factory(Admin::class)->create();
 
         $user = $user->fresh();
 
@@ -23,5 +23,5 @@ class UserTest extends TestCase
         $user->save();
 
         $this->assertTrue($user->isAdmin());
-    }
+    }*/
 }
