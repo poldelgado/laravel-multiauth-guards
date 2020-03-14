@@ -5,7 +5,6 @@ namespace Tests\Feature\Admin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\{User, Admin};
 
 class AdminDashboardTest extends TestCase
 {
@@ -14,7 +13,7 @@ class AdminDashboardTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $response = $this->actingAs($this->createAdmin(), 'admin')
+        $response = $this->actingAsAdmin()
                         ->get(route('admin_dashboard'))
                         ->assertStatus(200)
                         ->assertSee('Admin Panel');
@@ -23,7 +22,7 @@ class AdminDashboardTest extends TestCase
     /** @test */
     function non_admin_users_cannot_visit_the_admin_dashboard()
     {
-        $response = $this->actingAs($this->createUser())
+        $response = $this->actingAsUser()
                         ->get(route('admin_dashboard'))
                         ->assertStatus(302)
                         ->assertRedirect('login');
@@ -37,13 +36,4 @@ class AdminDashboardTest extends TestCase
                         ->assertRedirect('login');
     }
 
-    protected function createAdmin()
-    {
-       return factory(Admin::class)->create();
-    }
-
-    protected function createUser()
-    {
-       return factory(User::class)->create();
-    }
 }
