@@ -29,7 +29,7 @@
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
         <server name="DB_CONNECTION" value="mysql_testing"/>
-        <server name="DB_DATABASE" value="starter"/>
+        <server name="DB_DATABASE" value="sigecam_test"/>
         <server name="DB_USERNAME" value="root"/>
         <server name="DB_PASSWORD" value="1234"/>
         <server name="MAIL_DRIVER" value="array"/>
