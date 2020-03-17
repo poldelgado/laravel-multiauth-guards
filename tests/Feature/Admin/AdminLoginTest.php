@@ -8,9 +8,13 @@ use Tests\TestCase;
 
 class AdminLoginTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
-    /*function login_in_as_an_admin()
+    function login_in_as_an_admin()
     {
+        $this->withoutExceptionHandling();
+
         $email = 'admin@cam.net';
         $password = 'mamadera';
 
@@ -18,6 +22,8 @@ class AdminLoginTest extends TestCase
             'email' => $email,
             'password' => bcrypt($password),
         ]);
+        $this->post(route('admin.login'), compact('email', 'password'));
 
-    }*/
+        $this->assertAuthenticatedAs($admin, 'admin'); //Verifico que el usuario admin este autenticado en el guard admin.
+    }
 }
