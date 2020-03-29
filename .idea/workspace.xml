@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd16d80-0e91-4cf9-b7d5-3e04a84c9971" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/multiple-auth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/multiple-auth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,8 @@
       <updated>1581603702657</updated>
       <workItem from="1581603703989" duration="6391000" />
       <workItem from="1581950320133" duration="176000" />
-      <workItem from="1584323774523" duration="1239000" />
+      <workItem from="1584323774523" duration="1867000" />
+      <workItem from="1585496118763" duration="372000" />
     </task>
     <servers />
   </component>
@@ -184,14 +181,15 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1581950493560" />
-    <state x="639" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1581950457071">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1585496118771">
+      <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="639" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581950457071" />
-    <state x="623" y="263" width="672" height="675" key="search.everywhere.popup" timestamp="1584324750346">
+    <state x="639" y="384" key="com.intellij.ide.util.TipDialog/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1585496118771" />
+    <state x="623" y="263" width="672" height="675" key="search.everywhere.popup" timestamp="1585496225797">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581609681259" />
-    <state x="623" y="263" width="672" height="675" key="search.everywhere.popup/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1584324750346" />
+    <state x="623" y="263" width="672" height="675" key="search.everywhere.popup/0.32.1920.1048/1920.0.1920.1080@0.32.1920.1048" timestamp="1585496225797" />
   </component>
 </project>

@@ -57,7 +57,7 @@
                                     @else
                                         {{ Auth::user()->name }}
                                     @endadmin
-                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

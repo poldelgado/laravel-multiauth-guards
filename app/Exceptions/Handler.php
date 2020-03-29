@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use \Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -51,5 +53,27 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
         return parent::render($request, $exception);
+    }
+
+
+    //Sobreescribo método unauthenticated para redirigir el guard admin cuando este logueado
+    /**
+     * Convert an authentication exception into a response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['message' => $exception->getMessage()], 401);
+        }
+
+        if ($request->isAdmin()) { //cuando se va a una ruta valida de admin y no se inicio sesión redirije al login de admin
+            return redirect()->guest(route('admin.login'));
+            //throw new NotFoundHttpException; //si activamos esta linea devolvera un error 404
+        }
+        return redirect()->guest($exception->redirectTo() ?? route('login'));
     }
 }

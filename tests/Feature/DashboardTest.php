@@ -9,12 +9,26 @@ use Illuminate\Foundation\Testing\WithFaker;
 class DashboardTest extends TestCase
 {
     /** @test **/
-    function it_shows_the_dashboard()
+    function it_shows_the_dashboard_page_to_authenticated_users()
     {
-        $user = factory(User::class)->create();
-        $response = $this->actingAs($user)
+        $this->withoutExceptionHandling();
+
+        $response = $this->actingAsUser()
                     ->get(route('home'))
-                    ->assertStatus(200);
+                    ->assertStatus(200)
+                    ->assertSee('Dashboard');
+
+    }
+
+    /** @test **/
+    function it_shows_the_dashboard_page_to_admins()
+    {
+        $this->withoutExceptionHandling();
+
+        $response = $this->actingAsAdmin()
+                    ->get(route('home'))
+                    ->assertStatus(200)
+                    ->assertSee('Dashboard');
 
     }
 
